@@ -1,26 +1,35 @@
 # Carrierwave::Nobrainer
 
-TODO: Write a gem description
+This is a [NoBrainer](https://github.com/nviennot/nobrainer) adapter for CarrierWave gem.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'carrierwave-nobrainer'
+gem 'carrierwave-nobrainer', github: 'katafrakt/carrierwave-nobrainer'
 ```
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install carrierwave-nobrainer
-
 ## Usage
 
-TODO: Write usage instructions here
+In your model put `extend CarrierWave::NoBrainer` and then follow normal CarrierWave
+procedure. For example:
+
+```ruby
+class User
+  include NoBrainer::Document
+  include NoBrainer::Document::Timestamps
+  extend CarrierWave::NoBrainer
+
+  field :name, type: String, required: true
+  field :avatar, type: String
+  mount_uploader :avatar, AvatarUploader
+end
+```
 
 ## Contributing
 
