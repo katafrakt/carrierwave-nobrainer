@@ -1,4 +1,4 @@
-# Carrierwave::Nobrainer
+# CarrierWave::NoBrainer
 
 This is a [NoBrainer](https://github.com/nviennot/nobrainer) adapter for CarrierWave gem.
 
