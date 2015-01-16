@@ -98,6 +98,7 @@ RSpec.describe CarrierWave::NoBrainer do
   it "should remove the image if remove_image? returns true" do
     model.image = stub_file('test.jpeg')
     model.save
+    expect(model.image).not_to be_blank
     model.remove_image = true
     model.save
     model.reload
