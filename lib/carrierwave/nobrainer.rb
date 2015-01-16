@@ -7,10 +7,6 @@ module CarrierWave
       base.send(:extend, ClassMethods)
     end
 
-    def uploaded_files
-      @uploaded_files ||= {}
-    end
-
     module ClassMethods
       include CarrierWave::Mount
       attr_accessor :uploader_definitions
