@@ -7,11 +7,19 @@ module CarrierWave
       base.send(:extend, ClassMethods)
     end
 
+    def uploaded_files
+      @uploaded_files ||= {}
+    end
+
     module ClassMethods
       include CarrierWave::Mount
+      attr_accessor :uploader_definitions
 
       def mount_uploader(column, uploader, options={}, &block)
         super
+
+        self.uploader_definitions ||= {}
+        self.uploader_definitions[column] = {uploader: uploader, options: options}
 
         alias_method :read_uploader, :_read_attribute
         alias_method :write_uploader, :_write_attribute
