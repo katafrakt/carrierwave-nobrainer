@@ -23,7 +23,7 @@ procedure. For example:
 class User
   include NoBrainer::Document
   include NoBrainer::Document::Timestamps
-  extend CarrierWave::NoBrainer
+  include CarrierWave::NoBrainer
 
   field :name, type: String, required: true
   field :avatar, type: String
