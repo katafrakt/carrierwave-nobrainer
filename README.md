@@ -7,7 +7,7 @@ This is a [NoBrainer](https://github.com/nviennot/nobrainer) adapter for Carrier
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'carrierwave-nobrainer', github: 'katafrakt/carrierwave-nobrainer'
+gem 'carrierwave-nobrainer'
 ```
 
 And then execute:

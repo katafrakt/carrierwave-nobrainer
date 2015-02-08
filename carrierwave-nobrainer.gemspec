@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Paweł Świątkowski"]
   spec.email         = ["inquebrantable@gmail.com"]
   spec.summary       = %q{Adds support for NoBrainer to CarrierWave}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/katafrakt/carrierwave-nobrainer"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
