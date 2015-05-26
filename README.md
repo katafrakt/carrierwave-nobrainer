@@ -16,7 +16,7 @@ And then execute:
 
 ## Usage
 
-In your model put `extend CarrierWave::NoBrainer` and then follow normal CarrierWave
+In your model put `include CarrierWave::NoBrainer` and then follow normal CarrierWave
 procedure. For example:
 
 ```ruby
