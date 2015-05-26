@@ -1,10 +1,7 @@
 require 'rubygems'
 require 'bundler/setup'
 require 'rspec'
-
-require 'nobrainer'
-require 'carrierwave'
-require 'carrierwave/nobrainer'
+Bundler.require(:default, :development)
 
 def file_path( *paths )
   File.expand_path(File.join(File.dirname(__FILE__), 'fixtures', *paths))
@@ -34,4 +31,9 @@ end
 
 RSpec.configure do |config|
   config.include CarrierWave::Test::MockFiles
+
+  config.before(:each) do
+    NoBrainer.purge!
+    Dir["#{public_path('uploads')}/*"].each { |path| FileUtils.rm_rf(path) }
+  end
 end
