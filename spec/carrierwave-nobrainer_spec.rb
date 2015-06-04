@@ -84,6 +84,20 @@ RSpec.describe CarrierWave::NoBrainer do
     expect(model.image.current_path).to eq(public_path('uploads/test.jpeg'))
   end
 
+  context 'with subclass' do
+    class SubModel < Model
+    end
+
+    let(:model) { SubModel.new }
+
+    it "should copy the file to the upload directory when a file has been assigned" do
+      model.image = stub_file('test.jpeg')
+      expect(model.save?).to be_truthy
+      expect(model.image).to be_an_instance_of(uploader)
+      expect(model.image.current_path).to eq(public_path('uploads/test.jpeg'))
+    end
+  end
+
   context 'with validation' do
     class InvalidModel < Model
       validate { errors.add(:base, "BOOM!") }

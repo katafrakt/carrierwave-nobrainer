@@ -53,7 +53,7 @@ module CarrierWave
       def mount_base(column, uploader=nil, options={}, &block)
         super
 
-        class << self; attr_accessor :uploader_static_filenames; end
+        self.send(:class_attribute, :uploader_static_filenames)
         self.uploader_static_filenames ||= {}.with_indifferent_access
 
         if options[:filename]
