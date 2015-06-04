@@ -2,12 +2,15 @@
 
 This is a [NoBrainer](https://github.com/nviennot/nobrainer) adapter for CarrierWave gem.
 
+**Please note:** This version targets CarrierWave's master branch, which is under development. Expect bugs! (But also some nice features, like arrays of files). 
+
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'carrierwave-nobrainer'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'carrierwave-nobrainer', github: 'katafrakt/carrierwave-nobrainer'
 ```
 
 And then execute:
@@ -29,6 +32,12 @@ class User
   field :avatar, type: String
   mount_uploader :avatar, AvatarUploader
 end
+```
+
+Unlike ActiveRecord version, CarrierWave's methods are not included automatically to every NoBrainer model. This is because I believe that explicit is better than implicit. If you are not with me, you can add this to your initializer:
+
+```ruby
+NoBrainer::Document.send(:include, CarrierWave::NoBrainer)
 ```
 
 ## Contributing
