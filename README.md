@@ -40,6 +40,18 @@ Unlike ActiveRecord version, CarrierWave's methods are not included automaticall
 NoBrainer::Document.send(:include, CarrierWave::NoBrainer)
 ```
 
+## Added features
+
+You may pass `:filename => 'some_filename.png'` to
+the `mount_uploader` method options. For example:
+
+```ruby
+mount_uploader :icon, SomeUploader, :filename => 'icon.png'
+```
+
+This will have the effect of not storing this static filename in the document to
+avoid polluting the DB with useless fields.
+
 ## Contributing
 
 1. Fork it ( https://github.com/katafrakt/carrierwave-nobrainer/fork )
