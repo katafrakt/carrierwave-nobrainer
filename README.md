@@ -1,6 +1,8 @@
 # CarrierWave::NoBrainer
 
-This is a [NoBrainer](https://github.com/nviennot/nobrainer) adapter for CarrierWave gem.
+**This project is retired.** See [an official one](https://github.com/NoBrainerORM/carrierwave-nobrainer).
+
+This ~~is~~ was a [NoBrainer](https://github.com/nviennot/nobrainer) adapter for CarrierWave gem.
 
 **Please note:** This version targets CarrierWave's master branch, which is under development. Expect bugs! (But also some nice features, like arrays of files). 
 
