@@ -1,6 +1,6 @@
 # CarrierWave::NoBrainer
 
-**This project is retired.** See [an official one](https://github.com/NoBrainerORM/carrierwave-nobrainer).
+**This project is retired.** See [the official one](https://github.com/NoBrainerORM/carrierwave-nobrainer).
 
 This ~~is~~ was a [NoBrainer](https://github.com/nviennot/nobrainer) adapter for CarrierWave gem.
 
